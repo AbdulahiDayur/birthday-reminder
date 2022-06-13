@@ -1,11 +1,19 @@
 import React from "react";
 
-const List = () => {
+function List({ people }) {
   return (
     <>
-      <h2>list component</h2>
+      {people.map((obj, index) => {
+        return (
+          <div className="person">
+            <img src={obj.image} alt=""></img>
+            <h4>{obj.name}</h4>
+            <p>{obj.age} years old</p>
+          </div>
+        );
+      })}
     </>
   );
-};
+}
 
 export default List;
